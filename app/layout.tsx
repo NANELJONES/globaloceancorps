@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   description: "Global Ocean Corps and Conveyor",
 };
 
-export const poppins = Poppins({
+const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
