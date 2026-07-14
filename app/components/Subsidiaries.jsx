@@ -13,7 +13,7 @@ const Subsidiaries = () => {
       id: 1,
       number: "01",
       title: "Coastal Ocean and Environment Summer School in Nigeria and Ghana (COESSING)",
-      description: "COESSING is a one-week summer school that has taken place yearly since 2015 with the goal of educating and inspiring West African scientists at all career stages to pursue ocean-related fields. From 2015-2019 COESSING was held in Ghana, from 2020-2021 it was held virtually, and in 2022 it was held in Nigeria, which demonstrates that the summer school concept can be successful in multiple countries and formats. COESSING is one example of the exchange modalities that will be supported by Ocean Corps. COESSING is also an endorsed UN Ocean Decade Project.",
+      description: "COESSING is a one-week summer school that has taken place yearly since 2015 with the goal of educating and inspiring West African scientists at all career stages to pursue ocean-related fields. From 2015-2019 COESSING was held in Ghana, from 2020-2021 it was held virtually, and in 2022 it was held in Nigeria, which demonstrates that the summer school concept can be successful in multiple countries and formats. From 2023 onwards the school has alternated between Ghana (2023, 2025) and Nigeria (2026). COESSING is one example of the exchange modalities that will be supported by Ocean Corps. COESSING is an endorsed UN Ocean Decade Project.",
       link: "https://coessing.org",
       images: [
         "/coessing/1.webp",
