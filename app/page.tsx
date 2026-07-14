@@ -1,5 +1,4 @@
 "use client"
-import Image from "next/image";
 import Header from "./components/Header";
 import UNDirective from "./components/UNDirective";
 import MissionVision from "./components/MissionVision";
@@ -7,7 +6,7 @@ import WhatWeDo from "./components/WhatWeDo";
 import DownloadableContent from "./components/DownloadableContent";
 import Subsidiaries from "./components/Subsidiaries";
 import Team from "./components/Team";
-import ContactUs from "./components/ContactUs";
+import Newcontact from "./components/Newcontact";
 export default function Home() {
   return (
   <div className="max flex max-w-[1600px] gap-12 md:gap-[6em] flex-col gap-4 mx-auto h-full min-h-screen text-white p-8 md:p-12 lg:p-16">
@@ -22,7 +21,7 @@ export default function Home() {
   </div>
   <Subsidiaries />
   <Team />
-  <ContactUs />
+  <Newcontact />
   </div>
   );
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 const UNDirective = () => {
   return (
-    <div className="flex flex-col justify-between gap-4 py-4 md:sticky md:top-0 md:h-screen">
+    <div id="un-directive" className="flex flex-col justify-between gap-4 py-4 md:sticky md:top-0 md:h-screen scroll-mt-8">
         <h2 className="md:!text-[2.5em]">A UN Decade of Ocean Science for Sustainable Development Programme</h2>
 
         <div className="flex items-center  gap-4 relative w-full h-full max-w-[600px] max-h-[300px] mx-auto">

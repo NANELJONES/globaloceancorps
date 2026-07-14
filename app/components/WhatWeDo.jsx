@@ -8,19 +8,19 @@ const WhatWeDo = () => {
     {
       id: 1,
       title: "Scientific Discovery",
-      image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200&h=600&fit=crop",
+      image: "/ocean/ocean-4.jpg",
       description: "Oceanography is a global science and we need partners everywhere to successfully observe and model the global ocean, and to develop solutions for a more sustainable treatment of the ocean."
     },
     {
       id: 2,
       title: "Global Engagement",
-      image: "https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=1200&h=600&fit=crop",
+      image: "/ocean/ocean-1.jpg",
       description: "Just as the Peace Corps inspires young Americans to engage the world, Ocean Corps will inspire oceanographers to engage the world via capacity development and research collaboration."
     },
     {
       id: 3,
       title: "Equity and Diversity",
-      image: "https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=1200&h=600&fit=crop",
+      image: "/ocean/ocean-5.jpg",
       description: "Ocean science infrastructure is unequally distributed across the globe. Ocean Corps will create and support existing collaboration with ocean scientists globally to address this inequity."
     }
   ]
@@ -76,7 +76,6 @@ const WhatWeDo = () => {
                 width={1200}
                 height={600}
                 className="w-full h-full object-cover"
-                unoptimized
               />
             </motion.div>
 

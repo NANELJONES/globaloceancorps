@@ -8,14 +8,13 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 
 const Header = () => {
-  // Unsplash ocean images
   const oceanImages = [
-    'https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=400&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=400&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=400&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=400&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=400&h=400&fit=crop',
+    '/ocean/ocean-1.jpg',
+    '/ocean/ocean-2.jpg',
+    '/ocean/ocean-3.jpg',
+    '/ocean/ocean-4.jpg',
+    '/ocean/ocean-5.jpg',
+    '/ocean/ocean-6.jpg',
   ]
 
   // Animation variants
@@ -61,19 +60,37 @@ const Header = () => {
           >
             Inspiring sustained, long-term ocean science education and research collaborations between nations
           </motion.h4>
-          <motion.button 
-            className="btn-primary w-fit"
+          <motion.div
+            className="flex flex-wrap gap-3"
             initial={fadeUp.initial}
             animate={fadeUp.animate}
             transition={{ ...fadeUp.transition, delay: 0.4 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
           >
-            Read More
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6 12L10 8L6 4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </motion.button>
+            <Link href="#un-directive">
+              <motion.button 
+                className="btn-primary w-fit"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Read More
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 12L10 8L6 4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </motion.button>
+            </Link>
+            <Link href="mailto:COESSING@GMAIL.COM">
+              <motion.button 
+                className="btn-primary w-fit"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Contact Us
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 12L10 8L6 4" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </motion.button>
+            </Link>
+          </motion.div>
         </motion.div>
         {/* Bottom Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mt-8">
@@ -132,7 +149,7 @@ const Header = () => {
                       animate={fadeUp.animate}
                       transition={{ ...fadeUp.transition, delay: 0.9 }}
                     >
-                      One week immersive summer schools alternating between remote and regional setting res
+                      One-week immersive summer schools alternating between remote and regional settings to educate and inspire West African ocean scientists.
                     </motion.p>
                     <motion.button 
                       className="btn-primary !text-[0.8em]"
@@ -195,7 +212,6 @@ const Header = () => {
                       width={400}
                       height={400}
                       className="w-full h-full object-cover"
-                      unoptimized
                     />
                   </motion.div>
                 </SwiperSlide>
