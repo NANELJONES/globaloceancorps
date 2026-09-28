@@ -1,17 +1,14 @@
 import React from 'react'
-import Image from 'next/image'
+
 const UNDirective = () => {
   return (
-    <div id="un-directive" className="flex flex-col justify-between gap-4 py-4 md:sticky md:top-0 md:h-screen scroll-mt-8">
-        <h2 className="md:!text-[2.5em]">A UN Decade of Ocean Science for Sustainable Development Programme</h2>
-
-        <div className="flex items-center  gap-4 relative w-full h-full max-w-[600px] max-h-[300px] mx-auto">
-
-            <Image src="/stylized logo 2.png" className="object-cover object-top  " alt="UNDirective" fill/>
-        </div>
-      
+    <div id="un-directive" className="flex flex-col gap-4 py-4 md:sticky md:top-8 scroll-mt-8">
+      <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight">
+        A UN Decade of Ocean Science for Sustainable Development Programme
+      </h2>
     </div>
   )
 }
 
 export default UNDirective
+

@@ -1,149 +1,178 @@
 "use client"
 import React from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, Autoplay } from 'swiper/modules'
-import 'swiper/css/navigation'
-import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 
 const Subsidiaries = () => {
-  const subsidiaries = [
+  const oceanSchools = [
     {
       id: 1,
-      number: "01",
-      title: "Coastal Ocean and Environment Summer School in Nigeria and Ghana (COESSING)",
-      description: "COESSING is a one-week summer school that has taken place yearly since 2015 with the goal of educating and inspiring West African scientists at all career stages to pursue ocean-related fields. From 2015-2019 COESSING was held in Ghana, from 2020-2021 it was held virtually, and in 2022 it was held in Nigeria, which demonstrates that the summer school concept can be successful in multiple countries and formats. From 2023 onwards the school has alternated between Ghana (2023, 2025) and Nigeria (2026). COESSING is one example of the exchange modalities that will be supported by Ocean Corps. COESSING is an endorsed UN Ocean Decade Project.",
-      link: "https://coessing.org",
-      images: [
-        "/coessing/1.webp",
-        "/coessing/3.JPG",
-        "/coessing/9.jpg",
-      ]
+      title: "Coastal Ocean Environment Summer School In Nigeria and Ghana (COESSING)",
+      description: "A one-week summer school taking place yearly since 2015 with the goal of educating and inspiring West African scientists at all career stages to pursue ocean-related fields.",
+      link: "https://coessing.org"
+    },
+    {
+      id: 2,
+      title: "Coastal Ocean Environment School - Western Indian Ocean (COES-WIO)",
+      description: "A regional capacity-building initiative providing hands-on training for early-career ocean professionals in East Africa and the Western Indian Ocean region.",
+      link: "https://coeswio.org"
+    },
+    {
+      id: 3,
+      title: "Gulf of Guinea Ocean Summer School (GGOSS)",
+      description: "An annual summer school dedicated to oceanographic and environmental studies for early-career ocean scientists in the Gulf of Guinea.",
+      link: "https://ggosss.org"
     }
   ]
 
-  // Animation variants
+  const affiliatedActions = [
+    {
+      id: 1,
+      title: "EquiSea: The Ocean Science Fund for All",
+      description: "A global fund aimed at improving equity in ocean science by providing direct support for equipment, tools, & training.",
+      link: "https://equisea.org"
+    },
+    {
+      id: 2,
+      title: "CoastPredict",
+      description: "A global framework transforming coastal ocean observations and predictions for a sustainable ocean future.",
+      link: "https://coastpredict.org"
+    },
+    {
+      id: 3,
+      title: "BIOTTA",
+      description: "Building Capacity in Ocean Acidification Monitoring in the Gulf of Guinea to understand and address ocean acidification in West Africa.",
+      link: null
+    },
+    {
+      id: 4,
+      title: "Lusophone Hub of the Ocean Decade",
+      description: "Fostering collaboration, capacity building, and knowledge exchange across Portuguese-speaking ocean science communities worldwide.",
+      link: null
+    },
+    {
+      id: 5,
+      title: "Plastic Punch",
+      description: "A non-profit organization focused on raising awareness about marine plastic pollution and sustainable beach cleanups.",
+      link: "https://plasticpunch.org"
+    }
+  ]
+
   const fadeUp = {
-    initial: { opacity: 0, y: 50 },
+    initial: { opacity: 0, y: 30 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 1.2, ease: "easeInOut" }
+    transition: { duration: 1, ease: "easeInOut" }
   }
 
   return (
-    <div className="flex flex-col gap-6 ">
-        <h4 className='text-2xl md:!text-[2em]'>Our Initiatives</h4>
-      {subsidiaries.map((subsidiary, index) => (
+    <div className="flex flex-col gap-12 py-8">
+      {/* Ocean Schools Section */}
+      <div className="flex flex-col gap-6">
         <motion.div
-          key={subsidiary.id}
-          className="flex flex-col gap-6  pb-4"
           initial={fadeUp.initial}
           whileInView={fadeUp.animate}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ ...fadeUp.transition, delay: index * 0.2 }}
+          viewport={{ once: true }}
+          transition={fadeUp.transition}
         >
-          {/* Header Section with Number and Title */}
-          <div className="flex items-start gap-4 md:gap-6">
-            {/* Number - Hollow/Outlined */}
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-2">
+            Ocean Schools
+          </h2>
+          <div className="w-full h-[1px] bg-white/40 mb-6" />
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {oceanSchools.map((school, index) => (
             <motion.div
-              className="text-6xl md:text-7xl lg:text-8xl  border-current bg-transparent flex-shrink-0 w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 flex items-center justify-center"
+              key={school.id}
+              className="bg-white/5 border border-white/15 rounded-xl p-6 flex flex-col justify-between hover:border-white/40 transition-all duration-300"
               initial={fadeUp.initial}
               whileInView={fadeUp.animate}
               viewport={{ once: true }}
-              transition={{ ...fadeUp.transition, delay: index * 0.2 + 0.1 }}
+              transition={{ ...fadeUp.transition, delay: index * 0.15 }}
             >
-              {subsidiary.number}
-            </motion.div>
+              <div>
+                <span className="text-xs font-mono uppercase tracking-widest text-blue-300 mb-2 block">
+                  0{school.id} School
+                </span>
+                <h3 className="text-xl font-semibold mb-3 leading-snug">
+                  {school.title}
+                </h3>
+                <p className="text-sm text-white/80 leading-relaxed mb-6">
+                  {school.description}
+                </p>
+              </div>
 
-            {/* Title - Wraps to multiple lines */}
-            <motion.h2
-              className="text-2xl md:text-3xl lg:text-[4em]  leading-tight flex-1 max-w-4xl"
-              initial={fadeUp.initial}
-              whileInView={fadeUp.animate}
-              viewport={{ once: true }}
-              transition={{ ...fadeUp.transition, delay: index * 0.2 + 0.2 }}
-            >
-              {subsidiary.title}
-            </motion.h2>
-          </div>
-
-          {/* Separator Line */}
-          <motion.div
-            className="w-full h-[1px] bg-current mt-2"
-            initial={fadeUp.initial}
-            whileInView={fadeUp.animate}
-            viewport={{ once: true }}
-            transition={{ ...fadeUp.transition, delay: index * 0.2 + 0.3 }}
-          />
-
-          {/* Content Section: Text on Left, Images on Right */}
-          <div className="grid grid-cols-1 lg:grid-cols-2  gap-6 md:gap-8 lg:gap-12 items-start">
-            {/* Left: Description Text */}
-            <motion.div
-              className="flex flex-col gap-4"
-              initial={fadeUp.initial}
-              whileInView={fadeUp.animate}
-              viewport={{ once: true }}
-              transition={{ ...fadeUp.transition, delay: index * 0.2 + 0.4 }}
-            >
-                <div className='md:mt-[15em]'>
-
-               
-              <p className="text-base  md:text-lg leading-relaxed">
-                {subsidiary.description}
-              </p>
-
-              {subsidiary.link && (
+              {school.link && (
                 <Link
-                  href={subsidiary.link}
+                  href={school.link}
                   target="_blank"
-                  className="underline hover:no-underline transition-all w-fit mt-2"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-white hover:text-blue-300 underline underline-offset-4 transition-colors"
                 >
-                <button className='btn-primary'>  {subsidiary.link.replace('https://', '').replace('http://', '')}</button> 
+                  <span>Visit Website</span>
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
                 </Link>
               )}
-               </div>
             </motion.div>
+          ))}
+        </div>
+      </div>
 
-            {/* Right: Image Swiper */}
+      {/* Other Affiliated Actions */}
+      {/* <div className="flex flex-col gap-6 mt-4">
+        <motion.div
+          initial={fadeUp.initial}
+          whileInView={fadeUp.animate}
+          viewport={{ once: true }}
+          transition={fadeUp.transition}
+        >
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-2">
+            Other Affiliated Actions
+          </h2>
+          <div className="w-full h-[1px] bg-white/40 mb-6" />
+        </motion.div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {affiliatedActions.map((action, index) => (
             <motion.div
-              className="w-full h-[300px] "
+              key={action.id}
+              className="bg-white/5 border border-white/15 rounded-xl p-6 flex flex-col justify-between hover:border-white/40 transition-all duration-300"
               initial={fadeUp.initial}
               whileInView={fadeUp.animate}
               viewport={{ once: true }}
-              transition={{ ...fadeUp.transition, delay: index * 0.2 + 0.5 }}
+              transition={{ ...fadeUp.transition, delay: index * 0.1 }}
             >
-              <Swiper
-                modules={[Navigation, Autoplay]}
-                spaceBetween={16}
-                slidesPerView={1}
-                navigation={true}
-                autoplay={{
-                  delay: 3000,
-                  disableOnInteraction: false,
-                }}
-                className="w-full h-full overflow-hidden"
-              >
-                {subsidiary.images.map((image, imgIndex) => (
-                  <SwiperSlide key={imgIndex}>
-                    <div className="relative w-full h-full max-h-[400px]">
-                      <Image
-                        src={image}
-                        alt={`${subsidiary.title} - Image ${imgIndex + 1}`}
-                        fill
-                        className="object-cover"
-                        unoptimized
-                      />
-                    </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
+              <div>
+                <h3 className="text-lg font-semibold mb-2 leading-snug">
+                  {action.title}
+                </h3>
+                <p className="text-sm text-white/80 leading-relaxed mb-4">
+                  {action.description}
+                </p>
+              </div>
+
+              {action.link && (
+                <Link
+                  href={action.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-white hover:text-blue-300 underline underline-offset-4 transition-colors mt-2"
+                >
+                  <span>Visit Website</span>
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </Link>
+              )}
             </motion.div>
-          </div>
-        </motion.div>
-      ))}
+          ))}
+        </div>
+      </div> */}
     </div>
   )
 }
 
 export default Subsidiaries
+
