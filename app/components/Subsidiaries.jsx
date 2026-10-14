@@ -20,7 +20,7 @@ const Subsidiaries = () => {
     {
       id: 3,
       title: "Gulf of Guinea Ocean Summer School (GGOSS)",
-      description: "An annual summer school dedicated to oceanographic and environmental studies for early-career ocean scientists in the Gulf of Guinea.",
+      description: "An annual summer school dedicated to oceanographic and environmental studies for early-career ocean scientists from french speaking countries in the Gulf of Guinea.",
       link: "https://ggosss.org"
     }
   ]
